@@ -1,5 +1,6 @@
 import "./services.css";
 import ComputerModelContainer from "./computer/ComputerModelContainer";
+import MobileModelContainer from "./mobile/MobileModelContainer";
 import Counter from "./Counter";
 import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
@@ -93,8 +94,10 @@ const Services = () => {
         </div>
       </div>
       <div className="sSection right">
-        {currentServiceId === 
-          <ComputerModelContainer />
+        {currentServiceId === 1
+        ? (<ComputerModelContainer />)
+        : currentServiceId === 2 ? (<MobileModelContainer/>)
+        : null
         }
       </div>
     </div>
